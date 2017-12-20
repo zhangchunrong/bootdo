@@ -41,7 +41,6 @@ public class DeptController extends BaseController {
 	}
 
 	@ApiOperation(value="获取部门列表", notes="")
-	@RequestMapping(value={""})
 	@ResponseBody
 	@GetMapping("/list")
 	@RequiresPermissions("system:sysDept:sysDept")
