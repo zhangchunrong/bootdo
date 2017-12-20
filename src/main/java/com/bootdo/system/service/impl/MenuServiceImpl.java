@@ -6,6 +6,7 @@ import com.bootdo.system.dao.MenuDao;
 import com.bootdo.system.dao.RoleMenuDao;
 import com.bootdo.system.domain.MenuDO;
 import com.bootdo.system.service.MenuService;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -83,7 +84,7 @@ public class MenuServiceImpl implements MenuService {
 	@Override
 	public Tree<MenuDO> getTree() {
 		List<Tree<MenuDO>> trees = new ArrayList<Tree<MenuDO>>();
-		List<MenuDO> menuDOs = menuMapper.list(new HashMap<>(16));
+		List<MenuDO> menuDOs = menuMapper.list(new HashMap<String,Object>(16));
 		for (MenuDO sysMenuDO : menuDOs) {
 			Tree<MenuDO> tree = new Tree<MenuDO>();
 			tree.setId(sysMenuDO.getMenuId().toString());
